@@ -41,10 +41,10 @@
 <p>Once the firmware is uploaded to your development board and the hardware is set up, you can control the LED strip using MQTT messages. The firmware subscribes to the following topics:</p>
 <ul>
     <li>
-    <code>start/&lt;device_id&gt;/power</code>: Controls the power state of the LED strip. Accepted values are ON and OFF.</li>
+    <code>cmnd/&lt;device_id&gt;/power</code>: Controls the power state of the LED strip. Accepted values are ON and OFF.</li>
     <li>
 <li>
-    <code>start/&lt;device_id&gt;/effect</code>: Controls the effect of the LED strip. Accepted values are:
+    <code>cmnd/&lt;device_id&gt;/effect</code>: Controls the effect of the LED strip. Accepted values are:
     <ul>
         <li>Combination</li>
         <li>In Waves</li>
@@ -57,18 +57,17 @@
     </ul>
 </li>
 <li>
-    <code>start/&lt;device_id&gt;/status</code>: Returns the current state of the LED strip.
+    <code>tele/&lt;device_id&gt;/effect</code>: Returns the current effect
+</li>
+<li>
+    <code>tele/&lt;device_id&gt;/staus</code>: Returns the current power state
 </li>
 </ul>
 
 <h3>Examples</h3>
 <ul>
-    <li>To turn on the LED strip, publish the message ON to the topic <code>start/&lt;device_id&gt;/power</code>.
+    <li>To turn on the LED strip, publish the message ON to the topic <code>cmnd/&lt;device_id&gt;/power</code>.
     </li>
-    <li>To set the brightness of the LED strip to 50%, publish the message 128 to the topic <code>start/&lt;device_id&gt;/brightness</code>.
-    </li>
-    <li>To set the effect of the LED strip to "slow glow", publish the message slowGlo to the topic <code>start/&lt;device_id&gt;/effect</code>.
-    </li>
-    <li>To retrieve the current state of the LED strip, publish any message to the topic <code>start/&lt;device_id&gt;/status</code>.
+    <li>To set the effect of the LED strip to "slow glow", publish the message slowGlo to the topic <code>cmnd/&lt;device_id&gt;/effect</code>.
     </li>
 </ul>
