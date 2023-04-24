@@ -41,33 +41,35 @@
 <p>Once the firmware is uploaded to your development board and the hardware is set up, you can control the LED strip using MQTT messages. The firmware subscribes to the following topics:</p>
 <ul>
     <li>
-    <code>cmnd/&lt;device_id&gt;/power</code>: Controls the power state of the LED strip. Accepted values are ON and OFF.</li>
+        <code>cmnd/&lt;device_id&gt;/power</code>: Controls the power state of the LED strip. Accepted values are ON and OFF.
+    </li>
     <li>
-<li>
-    <code>cmnd/&lt;device_id&gt;/effect</code>: Controls the effect of the LED strip. Accepted values are:
-    <ul>
-        <li>Combination</li>
-        <li>In Waves</li>
-        <li>Sequential</li>
-        <li>Slo Glo</li>
-        <li>Chasing /Flash</li>
-        <li>Twinkle</li>
-        <li>SteadyOn</li>
-        <li>Slow Fade Alternate</li>
-    </ul>
-</li>
-<li>
-    <code>tele/&lt;device_id&gt;/effect</code>: Returns the current effect
-</li>
-<li>
-    <code>tele/&lt;device_id&gt;/staus</code>: Returns the current power state
-</li>
+     <code>cmnd/&lt;device_id&gt;/effect</code>: Controls the effect of the LED strip. Accepted values are:
+        <ul>
+            <li>Combination</li>
+            <li>In Waves</li>
+            <li>Sequential</li>
+            <li>Slo Glo</li>
+            <li>Chasing /Flash</li>
+            <li>Twinkle</li>
+            <li>SteadyOn</li>
+            <li>Slow Fade Alternate</li>
+        </ul>
+    </li>
+    <li>
+        <code>tele/&lt;device_id&gt;/effect</code>: Returns the current effect
+    </li>
+    <li>
+        <code>tele/&lt;device_id&gt;/status</code>: Returns the current power state
+    </li>
 </ul>
 
 <h3>Examples</h3>
 <ul>
-    <li>To turn on the LED strip, publish the message ON to the topic <code>cmnd/&lt;device_id&gt;/power</code>.
+    <li>
+        To turn on the LED strip, publish the message ON to the topic <code>cmnd/&lt;device_id&gt;/power</code>.
     </li>
-    <li>To set the effect of the LED strip to "slow glow", publish the message slowGlo to the topic <code>cmnd/&lt;device_id&gt;/effect</code>.
+    <li>
+        To set the effect of the LED strip to "slow glow", publish the message slowGlo to the topic <code>cmnd/&lt;device_id&gt;/effect</code>.
     </li>
 </ul>
